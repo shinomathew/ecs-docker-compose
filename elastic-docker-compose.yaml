@@ -22,8 +22,8 @@ services:
       discovery.seed_hosts: logstash
       LS_JAVA_OPTS: "-Xms512m -Xmx512m"
     volumes:
-      - ./logstash/pipeline/logstash-nginx.config:/usr/share/logstash/pipeline/logstash-nginx.config
-      - ./logstash/nginx.log:/home/nginx.log
+      - logstash-volume:/usr/share/logstash/pipeline/logstash-nginx.config
+      - logstash-volume:/home/nginx.log
     ports:
       - 5000:5000
       - 5044:5044
